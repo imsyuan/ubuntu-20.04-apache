@@ -25,7 +25,6 @@ RUN echo "SSLProtocol ALL -SSLv2 -SSLv3" >> /etc/apache2/apache2.conf
 RUN echo 'MaxConnectionsPerChild ${MAXCONNECTIONSPERCHILD}' >> /etc/apache2/apache2.conf
 RUN sed -i -e 's/Listen 80/Listen 8080/g' /etc/apache2/ports.conf
 RUN sed -i -e 's/Listen 443/#Listen 8443/g' /etc/apache2/ports.conf
-RUN echo "Listen 8081" >> /etc/apache2/ports.conf
 RUN a2enmod deflate
 RUN a2enmod rewrite
 RUN a2enmod ssl
